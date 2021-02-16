@@ -10,18 +10,18 @@ var catalogRouter = require('./routes/catalog'); //import routs for "catalog" ar
 var app = express();
 
 //Set up mongoose connection
-const MongoClient = require('mongodb').MongoClient;
+/*const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://JorgeCollazo:54145721@cluster0.rieb1.mongodb.net/PROJECT 0?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true });
 client.connect(err => {
   const collection = client.db("test").collection("devices");
   // perform actions on the collection object
   client.close();
-});
+});*/
 
 // Setup mongoose connection
-/*const mongoose = require('mongoose');
-const uri = "mongodb+srv://JorgeCollazo:54145721@cluster0.rieb1.mongodb.net/PROJECT 0?retryWrites=true&w=majority";
+const mongoose = require('mongoose');
+const uri = 'mongodb+srv://JorgeCollazo:qwert@cluster0.jvwic.mongodb.net/whyyy?retryWrites=true&w=majority';
 mongoose
   .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   .catch((err) => {
@@ -29,11 +29,18 @@ mongoose
       console.log('There was an error:', err);
     } else {
       // perform actions on the collection object
-      const collection = client.db('local_library').collection('books');
+      const collection = client.db('Cluster0').collection('books');
       console.log('Book data', collection);
     }
     client.close();
-  });*/
+  });
+
+  //Set up mongoose connection
+/*var mongoose = require('mongoose');
+var mongoDB = 'mongodb+srv://JorgeCollazo:12345@cluster0.rieb1.mongodb.net/WHY?retryWrites=true&w=majority';
+mongoose.connect(mongoDB, { useNewUrlParser: true , useUnifiedTopology: true});
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));*/
  
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
